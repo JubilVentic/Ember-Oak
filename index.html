@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Ember & Oak Coffee — specialty coffee, slow mornings, and good company in Iligan City."
+    />
+    <title>Ember & Oak Coffee</title>
+    <link rel="icon" href="images/favicon.ico" sizes="any" />
+    <link rel="icon" href="images/favicon-32x32.png" type="image/png" sizes="32x32" />
+    <link rel="icon" href="images/favicon-16x16.png" type="image/png" sizes="16x16" />
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body id="top">
+    <header class="site-header site-header--over-hero">
+      <nav class="nav" aria-label="Main">
+        <a class="nav__logo" href="#top">
+          <img src="images/logo.png" alt="Ember &amp; Oak" width="44" height="44" />
+        </a>
+        <div class="nav__links">
+          <a class="nav__link" href="#about">About</a>
+          <a class="nav__link" href="#menu">Menu</a>
+          <a class="nav__link" href="#visit">Visit</a>
+        </div>
+        <a class="nav__cta" href="#visit">Find us</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero" aria-labelledby="hero-heading">
+        <div class="hero__bg" aria-hidden="true"></div>
+        <div class="hero__overlay" aria-hidden="true"></div>
+        <div class="hero__inner">
+          <div class="hero__brand">
+            <p class="hero__brand-name">Ember &amp; Oak</p>
+          </div>
+          <h1 class="hero__title" id="hero-heading">Not Your Average Roost.</h1>
+          <p class="hero__lead">
+            Slow-roasted beans, sharp design, and a community that gathers after dark.
+          </p>
+          <div class="hero__actions">
+            <a class="btn btn--primary btn--landing" href="#menu">View menu</a>
+            <a class="btn btn--ghost btn--landing btn--on-dark" href="#visit">Find us</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="about" id="about" aria-labelledby="about-heading">
+        <div class="about__inner">
+          <div class="about__content">
+            <h2 class="section-heading" id="about-heading">Our story</h2>
+            <p>
+              Ember &amp; Oak started with a simple idea: great coffee should feel
+              personal. We source small-batch beans, dial in every pour-over, and
+              keep the space calm enough to stay awhile.
+            </p>
+            <p>
+              Whether you are here for a quick espresso or a long table with
+              friends, we pour with care and serve with warmth.
+            </p>
+            <ul class="about__stats" aria-label="Highlights">
+              <li>
+                <span class="about__stat-value">Single-origin</span>
+                <span class="about__stat-label">Rotating beans</span>
+              </li>
+              <li>
+                <span class="about__stat-value">Fresh daily</span>
+                <span class="about__stat-label">Pastries &amp; bites</span>
+              </li>
+              <li>
+                <span class="about__stat-value">Al fresco</span>
+                <span class="about__stat-label">Outdoor seating</span>
+              </li>
+            </ul>
+          </div>
+          <div class="about__carousel" aria-label="Menu gallery">
+            <div class="about__carousel-track">
+              <div class="about__column about__column--solo">
+                <figure class="about__tile about__tile--tall">
+                  <img src="images/menu/latte.jpg" alt="Oat milk latte" loading="lazy" />
+                  <figcaption>Oat milk latte</figcaption>
+                </figure>
+              </div>
+              <div class="about__column about__column--duo">
+                <figure class="about__tile about__tile--short">
+                  <img src="images/menu/croissant.jpg" alt="Almond croissant" loading="lazy" />
+                  <figcaption>Almond croissant</figcaption>
+                </figure>
+                <figure class="about__tile about__tile--short">
+                  <img src="images/menu/cookie.jpg" alt="Dark chocolate cookie" loading="lazy" />
+                  <figcaption>Chocolate cookie</figcaption>
+                </figure>
+              </div>
+              <div class="about__column about__column--solo">
+                <figure class="about__tile about__tile--tall">
+                  <img src="images/menu/espresso.jpg" alt="Double shot espresso" loading="lazy" />
+                  <figcaption>Double shot</figcaption>
+                </figure>
+              </div>
+              <div class="about__column about__column--duo">
+                <figure class="about__tile about__tile--short">
+                  <img src="images/menu/cortado.jpg" alt="Cortado" loading="lazy" />
+                  <figcaption>Cortado</figcaption>
+                </figure>
+                <figure class="about__tile about__tile--short">
+                  <img src="images/menu/cardamom-bun.jpg" alt="Cardamom bun" loading="lazy" />
+                  <figcaption>Cardamom bun</figcaption>
+                </figure>
+              </div>
+              <div class="about__column about__column--solo">
+                <figure class="about__tile about__tile--tall">
+                  <img src="images/menu/grain-bowl.jpg" alt="Grain bowl" loading="lazy" />
+                  <figcaption>Grain bowl</figcaption>
+                </figure>
+              </div>
+              <div class="about__column about__column--duo">
+                <figure class="about__tile about__tile--short">
+                  <img src="images/menu/avocado-toast.jpg" alt="Avocado toast" loading="lazy" />
+                  <figcaption>Avocado toast</figcaption>
+                </figure>
+                <figure class="about__tile about__tile--short">
+                  <img src="images/menu/sandwich.jpg" alt="Breakfast sandwich" loading="lazy" />
+                  <figcaption>Breakfast sandwich</figcaption>
+                </figure>
+              </div>
+              <div class="about__column about__column--solo">
+                <figure class="about__tile about__tile--tall">
+                  <img src="images/menu/pasta-alfredo.jpg" alt="Chicken alfredo" loading="lazy" />
+                  <figcaption>Chicken alfredo</figcaption>
+                </figure>
+              </div>
+              <div class="about__column about__column--duo">
+                <figure class="about__tile about__tile--short">
+                  <img src="images/menu/pasta-aglio.jpg" alt="Aglio olio" loading="lazy" />
+                  <figcaption>Aglio olio</figcaption>
+                </figure>
+                <figure class="about__tile about__tile--short">
+                  <img src="images/menu/pasta-marinara.jpg" alt="Marinara" loading="lazy" />
+                  <figcaption>Marinara</figcaption>
+                </figure>
+              </div>
+              <div class="about__column about__column--solo">
+                <figure class="about__tile about__tile--tall">
+                  <img src="images/menu/pasta-carbonara.jpg" alt="Carbonara" loading="lazy" />
+                  <figcaption>Carbonara</figcaption>
+                </figure>
+              </div>
+              <div class="about__column about__column--duo">
+                <figure class="about__tile about__tile--short">
+                  <img src="images/menu/pasta-pesto.jpg" alt="Pesto linguine" loading="lazy" />
+                  <figcaption>Pesto linguine</figcaption>
+                </figure>
+                <figure class="about__tile about__tile--short">
+                  <img src="images/menu/pasta-mushroom.jpg" alt="Bolognese" loading="lazy" />
+                  <figcaption>Bolognese</figcaption>
+                </figure>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="menu" id="menu" aria-labelledby="menu-heading">
+        <div class="menu__header">
+          <p class="menu__eyebrow">The goods</p>
+          <h2 class="menu__title" id="menu-heading">Our offerings</h2>
+          <p class="menu__intro">Pulled, baked, and built in-house every morning.</p>
+          <div class="menu__filters" role="tablist" aria-label="Menu categories">
+            <button class="menu__filter menu__filter--active" type="button" data-filter="all" role="tab" aria-selected="true">All</button>
+            <button class="menu__filter" type="button" data-filter="espresso" role="tab" aria-selected="false">Espresso</button>
+            <button class="menu__filter" type="button" data-filter="pastries" role="tab" aria-selected="false">Pastries</button>
+            <button class="menu__filter" type="button" data-filter="food" role="tab" aria-selected="false">Food</button>
+            <button class="menu__filter" type="button" data-filter="pasta" role="tab" aria-selected="false">Pasta</button>
+          </div>
+        </div>
+        <div class="menu__grid">
+          <article class="menu-card" data-category="espresso">
+            <button type="button" class="menu-card__media" aria-label="View menu item image">
+              <img src="images/menu/espresso.jpg" alt="" loading="lazy" width="400" height="300" />
+            </button>
+            <div class="menu-card__body">
+              <div class="menu-card__row">
+                <h3 class="menu-card__title">Double shot espresso</h3>
+                <span class="menu-card__price">₱120</span>
+              </div>
+              <p class="menu-card__desc">Dense, syrupy, and unapologetically bold. House blend, pulled twice.</p>
+            </div>
+          </article>
+          <article class="menu-card" data-category="espresso">
+            <button type="button" class="menu-card__media" aria-label="View menu item image">
+              <img src="images/menu/latte.jpg" alt="" loading="lazy" width="400" height="300" />
+            </button>
+            <div class="menu-card__body">
+              <div class="menu-card__row">
+                <h3 class="menu-card__title">Oat milk latte</h3>
+                <span class="menu-card__price">₱175</span>
+              </div>
+              <p class="menu-card__desc">Smooth oat milk steamed silky with our signature roast and fine latte art.</p>
+            </div>
+          </article>
+          <article class="menu-card" data-category="espresso">
+            <button type="button" class="menu-card__media" aria-label="View menu item image">
+              <img src="images/menu/cortado.jpg" alt="" loading="lazy" width="400" height="300" />
+            </button>
+            <div class="menu-card__body">
+              <div class="menu-card__row">
+                <h3 class="menu-card__title">Cortado</h3>
+                <span class="menu-card__price">₱155</span>
+              </div>
+              <p class="menu-card__desc">Equal parts espresso and warm milk. Balanced, bright, no nonsense.</p>
+            </div>
+          </article>
+          <article class="menu-card" data-category="pastries">
+            <button type="button" class="menu-card__media" aria-label="View menu item image">
+              <img src="images/menu/croissant.jpg" alt="" loading="lazy" width="400" height="300" />
+            </button>
+            <div class="menu-card__body">
+              <div class="menu-card__row">
+                <h3 class="menu-card__title">Almond croissant</h3>
+                <span class="menu-card__price">₱95</span>
+              </div>
+              <p class="menu-card__desc">Twice-baked, flaky, dusted with sugar and stuffed with almond cream.</p>
+            </div>
+          </article>
+          <article class="menu-card" data-category="pastries">
+            <button type="button" class="menu-card__media" aria-label="View menu item image">
+              <img src="images/menu/cookie.jpg" alt="" loading="lazy" width="400" height="300" />
+            </button>
+            <div class="menu-card__body">
+              <div class="menu-card__row">
+                <h3 class="menu-card__title">Dark chocolate cookie</h3>
+                <span class="menu-card__price">₱85</span>
+              </div>
+              <p class="menu-card__desc">Cast iron baked, gooey center, flaked salt. Pairs hard with espresso.</p>
+            </div>
+          </article>
+          <article class="menu-card" data-category="pastries">
+            <button type="button" class="menu-card__media" aria-label="View menu item image">
+              <img src="images/menu/cardamom-bun.jpg" alt="" loading="lazy" width="400" height="300" />
+            </button>
+            <div class="menu-card__body">
+              <div class="menu-card__row">
+                <h3 class="menu-card__title">Cardamom bun</h3>
+                <span class="menu-card__price">₱90</span>
+              </div>
+              <p class="menu-card__desc">Hand-rolled Scandinavian classic, perfumed with fresh cardamom.</p>
+            </div>
+          </article>
+          <article class="menu-card" data-category="food">
+            <button type="button" class="menu-card__media" aria-label="View menu item image">
+              <img src="images/menu/avocado-toast.jpg" alt="" loading="lazy" width="400" height="300" />
+            </button>
+            <div class="menu-card__body">
+              <div class="menu-card__row">
+                <h3 class="menu-card__title">Avocado toast</h3>
+                <span class="menu-card__price">₱285</span>
+              </div>
+              <p class="menu-card__desc">Sourdough, smashed avo, chili crisp, lemon zest, soft herbs.</p>
+            </div>
+          </article>
+          <article class="menu-card" data-category="food">
+            <button type="button" class="menu-card__media" aria-label="View menu item image">
+              <img src="images/menu/sandwich.jpg" alt="" loading="lazy" width="400" height="300" />
+            </button>
+            <div class="menu-card__body">
+              <div class="menu-card__row">
+                <h3 class="menu-card__title">Breakfast sandwich</h3>
+                <span class="menu-card__price">₱265</span>
+              </div>
+              <p class="menu-card__desc">Brioche, soft egg, smoked gouda, peppered bacon, house aioli.</p>
+            </div>
+          </article>
+          <article class="menu-card" data-category="food">
+            <button type="button" class="menu-card__media" aria-label="View menu item image">
+              <img src="images/menu/grain-bowl.jpg" alt="" loading="lazy" width="400" height="300" />
+            </button>
+            <div class="menu-card__body">
+              <div class="menu-card__row">
+                <h3 class="menu-card__title">Grain bowl</h3>
+                <span class="menu-card__price">₱345</span>
+              </div>
+              <p class="menu-card__desc">Farro, roasted squash, kale, tahini, pomegranate. Bright and hearty.</p>
+            </div>
+          </article>
+          <article class="menu-card" data-category="pasta">
+            <button type="button" class="menu-card__media" aria-label="View menu item image">
+              <img src="images/menu/pasta-alfredo.jpg" alt="" loading="lazy" width="400" height="300" />
+            </button>
+            <div class="menu-card__body">
+              <div class="menu-card__row">
+                <h3 class="menu-card__title">Chicken alfredo</h3>
+                <span class="menu-card__price">₱315</span>
+              </div>
+              <p class="menu-card__desc">Fettuccine, grilled chicken, garlic cream sauce, parmesan, and parsley.</p>
+            </div>
+          </article>
+          <article class="menu-card" data-category="pasta">
+            <button type="button" class="menu-card__media" aria-label="View menu item image">
+              <img src="images/menu/pasta-aglio.jpg" alt="" loading="lazy" width="400" height="300" />
+            </button>
+            <div class="menu-card__body">
+              <div class="menu-card__row">
+                <h3 class="menu-card__title">Aglio olio</h3>
+                <span class="menu-card__price">₱265</span>
+              </div>
+              <p class="menu-card__desc">Spaghetti tossed in olive oil, garlic, chili flakes, and fresh parsley.</p>
+            </div>
+          </article>
+          <article class="menu-card" data-category="pasta">
+            <button type="button" class="menu-card__media" aria-label="View menu item image">
+              <img src="images/menu/pasta-marinara.jpg" alt="" loading="lazy" width="400" height="300" />
+            </button>
+            <div class="menu-card__body">
+              <div class="menu-card__row">
+                <h3 class="menu-card__title">Marinara</h3>
+                <span class="menu-card__price">₱255</span>
+              </div>
+              <p class="menu-card__desc">Slow-simmered tomato sauce, basil, penne, and shaved parmesan.</p>
+            </div>
+          </article>
+          <article class="menu-card" data-category="pasta">
+            <button type="button" class="menu-card__media" aria-label="View menu item image">
+              <img src="images/menu/pasta-carbonara.jpg" alt="" loading="lazy" width="400" height="300" />
+            </button>
+            <div class="menu-card__body">
+              <div class="menu-card__row">
+                <h3 class="menu-card__title">Carbonara</h3>
+                <span class="menu-card__price">₱295</span>
+              </div>
+              <p class="menu-card__desc">Spaghetti, egg yolk, pecorino, guanciale, and cracked black pepper.</p>
+            </div>
+          </article>
+          <article class="menu-card" data-category="pasta">
+            <button type="button" class="menu-card__media" aria-label="View menu item image">
+              <img src="images/menu/pasta-pesto.jpg" alt="" loading="lazy" width="400" height="300" />
+            </button>
+            <div class="menu-card__body">
+              <div class="menu-card__row">
+                <h3 class="menu-card__title">Pesto linguine</h3>
+                <span class="menu-card__price">₱275</span>
+              </div>
+              <p class="menu-card__desc">House basil pesto, linguine, cherry tomatoes, pine nuts, and parmesan.</p>
+            </div>
+          </article>
+          <article class="menu-card" data-category="pasta">
+            <button type="button" class="menu-card__media" aria-label="View menu item image">
+              <img src="images/menu/pasta-mushroom.jpg" alt="" loading="lazy" width="400" height="300" />
+            </button>
+            <div class="menu-card__body">
+              <div class="menu-card__row">
+                <h3 class="menu-card__title">Bolognese</h3>
+                <span class="menu-card__price">₱305</span>
+              </div>
+              <p class="menu-card__desc">Rich meat ragu, tagliatelle, soffritto, and aged parmesan finish.</p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="visit" id="visit" aria-labelledby="visit-heading">
+        <div class="visit__inner">
+          <div class="visit__panel">
+            <p class="visit__eyebrow">Visit</p>
+            <h2 class="visit__title" id="visit-heading">Find the roost</h2>
+            <p class="visit__intro">
+              Tucked on Oak Street in San Miguel. Look for the warm lights and the smell of fresh roast.
+            </p>
+            <ul class="visit__details">
+              <li>
+                <span class="visit__icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75">
+                    <path d="M12 21s7-5.2 7-11.1a7 7 0 1 0-14 0C5 15.8 12 21 12 21Z" />
+                    <circle cx="12" cy="9.9" r="2.4" />
+                  </svg>
+                </span>
+                <div>
+                  <strong>Address</strong>
+                  <p>
+                    12 Oak Street, San Miguel<br />
+                    Iligan City, Lanao del Norte 9200
+                  </p>
+                </div>
+              </li>
+              <li>
+                <span class="visit__icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75">
+                    <circle cx="12" cy="12" r="8.5" />
+                    <path d="M12 7.5v5l3 1.8" />
+                  </svg>
+                </span>
+                <div>
+                  <strong>Hours</strong>
+                  <p>
+                    Mon – Thu: 7:00 AM – 9:00 PM<br />
+                    Fri – Sat: 7:00 AM – 10:00 PM<br />
+                    Sunday: 8:00 AM – 8:00 PM
+                  </p>
+                </div>
+              </li>
+              <li>
+                <span class="visit__icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75">
+                    <path d="M5.8 4h2.2l1.4 4.2-2 1.1a11 11 0 0 0 5 5l1.1-2 4.2 1.4V19c0 .6-.5 1.1-1.1 1.2-1.9.3-7 .6-10.8-3.2S4.2 7.1 4.3 5.2 4.8 4 5.8 4Z" />
+                  </svg>
+                </span>
+                <div>
+                  <strong>Phone</strong>
+                  <p><a href="tel:+639171234567">+63 917 123 4567</a></p>
+                </div>
+              </li>
+              <li>
+                <span class="visit__icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75">
+                    <rect x="4" y="6.5" width="16" height="11" rx="1.5" />
+                    <path d="m4 8.5 8 5.5 8-5.5" />
+                  </svg>
+                </span>
+                <div>
+                  <strong>Email</strong>
+                  <p><a href="mailto:hello@emberandoak.coffee">hello@emberandoak.coffee</a></p>
+                </div>
+              </li>
+            </ul>
+            <div class="visit__actions">
+              <a
+                class="btn btn--primary btn--landing"
+                href="https://maps.google.com/?q=12+Oak+Street+San+Miguel+Iligan+City"
+                target="_blank"
+                rel="noopener noreferrer"
+              >Get directions</a>
+              <a class="btn btn--ghost btn--landing visit__btn-outline" href="tel:+639171234567">Call us</a>
+            </div>
+          </div>
+          <div class="visit__visual">
+            <img
+              src="images/visit-exterior.jpg"
+              alt="Outdoor seating at Ember &amp; Oak"
+              loading="lazy"
+              width="1200"
+              height="900"
+            />
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <img class="footer__logo" src="images/logo.png" alt="" width="56" height="56" />
+      <p class="footer__brand">Ember &amp; Oak Coffee</p>
+      <p class="footer__tagline">A fictional café concept — not affiliated with any real business.</p>
+      <nav class="footer__nav" aria-label="Footer">
+        <a href="#about">About</a>
+        <a href="#menu">Menu</a>
+        <a href="#visit">Visit</a>
+      </nav>
+    </footer>
+
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="mobile-nav">
+      <span class="nav-toggle__bar"></span>
+      <span class="nav-toggle__bar"></span>
+      <span class="nav-toggle__bar"></span>
+      <span class="visually-hidden">Menu</span>
+    </button>
+    <nav class="mobile-nav" id="mobile-nav" aria-label="Mobile" hidden>
+      <a href="#about">About</a>
+      <a href="#menu">Menu</a>
+      <a href="#visit">Visit</a>
+    </nav>
+
+    <div class="lightbox" id="lightbox" hidden aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="lightbox-caption">
+      <button class="lightbox__backdrop" type="button" aria-label="Close image preview"></button>
+      <div class="lightbox__dialog">
+        <button class="lightbox__close" type="button" aria-label="Close image preview">&times;</button>
+        <img class="lightbox__img" id="lightbox-img" src="" alt="" />
+        <p class="lightbox__caption" id="lightbox-caption"></p>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
