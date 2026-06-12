@@ -522,7 +522,7 @@ img {
 .about {
   background: var(--espresso);
   color: #fff;
-  padding: clamp(4rem, 8vw, 6rem) var(--gutter);
+  padding: clamp(2.5rem, 5vw, 3.5rem) var(--gutter);
   overflow: hidden;
 }
 
@@ -530,11 +530,11 @@ img {
   position: relative;
   max-width: var(--max);
   margin: 0 auto;
-  min-height: clamp(32rem, 72vh, 44rem);
+  min-height: clamp(40rem, 75vh, 58rem);
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: clamp(2.5rem, 5vw, 4rem) 0;
+  padding: clamp(1rem, 2vw, 1.5rem) 0;
 }
 
 .about__inner::after {
@@ -617,15 +617,15 @@ img {
   inset: 0;
   z-index: 0;
   display: flex;
-  align-items: center;
+  align-items: stretch;
   overflow: hidden;
   opacity: 0.68;
   pointer-events: none;
   mask-image: linear-gradient(
     90deg,
     transparent 0%,
-    #000 12%,
-    #000 88%,
+    #000 10%,
+    #000 90%,
     transparent 100%
   );
 }
@@ -633,28 +633,33 @@ img {
 .about__carousel-track {
   display: flex;
   align-items: stretch;
-  gap: 0.65rem;
+  gap: clamp(0.75rem, 1.2vw, 1rem);
   width: max-content;
-  height: clamp(22rem, 48vw, 30rem);
+  height: 100%;
+  min-height: 100%;
   will-change: transform;
 }
 
 .about__column {
-  flex: 0 0 clamp(8.75rem, 16vw, 10.25rem);
+  flex: 0 0 clamp(11rem, 20vw, 14rem);
   display: grid;
-  grid-template-rows: repeat(6, minmax(0, 1fr));
-  gap: 0.65rem;
+  gap: clamp(0.75rem, 1.2vw, 1rem);
   height: 100%;
+  min-height: 0;
 }
 
 .about__column--solo {
-  flex-basis: clamp(10rem, 18vw, 11.5rem);
+  flex-basis: clamp(12.5rem, 22vw, 15.5rem);
+  grid-template-rows: minmax(0, 1fr);
+}
+
+.about__column--duo {
+  grid-template-rows: repeat(2, minmax(0, 1fr));
 }
 
 .about__tile {
   position: relative;
   display: block;
-  height: 100%;
   margin: 0;
   min-height: 0;
   overflow: hidden;
@@ -776,12 +781,9 @@ img {
   color: rgba(75, 54, 33, 0.72);
 }
 
-.about__tile--tall {
-  grid-row: span 6;
-}
-
+.about__tile--tall,
 .about__tile--short {
-  grid-row: span 3;
+  min-height: 0;
 }
 
 .menu {
@@ -1434,16 +1436,20 @@ body.header-over-hero .mobile-nav__cta:hover {
   }
 
   .about__inner {
-    min-height: clamp(28rem, 68vh, 36rem);
-    padding: 2.5rem 0;
+    min-height: clamp(32rem, 75vh, 44rem);
+    padding: 1rem 0;
   }
 
   .about__carousel {
     opacity: 0.5;
   }
 
-  .about__carousel-track {
-    height: clamp(18rem, 55vw, 24rem);
+  .about__column {
+    flex-basis: clamp(9rem, 24vw, 11.5rem);
+  }
+
+  .about__column--solo {
+    flex-basis: clamp(10rem, 26vw, 12.5rem);
   }
 
   .about__stats li {

@@ -194,7 +194,7 @@ if (aboutCarousel && aboutTrack) {
     img.decoding = "async";
   });
 
-  const BASE_SPEED = 90;
+  const BASE_SPEED = 80;
   const SLOW_FACTOR = 0.5;
   const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
