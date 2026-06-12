@@ -5,8 +5,8 @@ const mobileNav = document.getElementById("mobile-nav");
 function setMobileNavOpen(open) {
   if (!navToggle || !mobileNav) return;
   navToggle.setAttribute("aria-expanded", String(open));
-  mobileNav.hidden = !open;
   mobileNav.classList.toggle("is-open", open);
+  mobileNav.setAttribute("aria-hidden", String(!open));
   document.body.classList.toggle("mobile-nav-open", open);
 }
 
