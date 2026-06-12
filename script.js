@@ -287,7 +287,7 @@ function closeLightbox() {
   lightboxTrigger = null;
 }
 
-document.querySelectorAll(".about__tile").forEach((tile) => {
+document.querySelectorAll(".about__tile:not(.about__tile--review)").forEach((tile) => {
   tile.setAttribute("tabindex", "0");
   tile.setAttribute("role", "button");
 
