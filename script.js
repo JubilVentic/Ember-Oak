@@ -2,10 +2,15 @@ const header = document.querySelector(".site-header");
 const navToggle = document.querySelector(".nav-toggle");
 const mobileNav = document.getElementById("mobile-nav");
 
-function closeMobileNav() {
+function setMobileNavOpen(open) {
   if (!navToggle || !mobileNav) return;
-  navToggle.setAttribute("aria-expanded", "false");
-  mobileNav.hidden = true;
+  navToggle.setAttribute("aria-expanded", String(open));
+  mobileNav.hidden = !open;
+  document.body.classList.toggle("mobile-nav-open", open);
+}
+
+function closeMobileNav() {
+  setMobileNavOpen(false);
 }
 
 function updateHeader() {
@@ -60,12 +65,15 @@ document.querySelector(".nav__logo")?.addEventListener("click", (event) => {
 
 navToggle?.addEventListener("click", () => {
   const open = navToggle.getAttribute("aria-expanded") === "true";
-  navToggle.setAttribute("aria-expanded", String(!open));
-  mobileNav.hidden = open;
+  setMobileNavOpen(!open);
 });
 
 mobileNav?.querySelectorAll("a").forEach((link) => {
   link.addEventListener("click", closeMobileNav);
+});
+
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Escape") closeMobileNav();
 });
 
 const revealSections = document.querySelectorAll(".section-reveal");
@@ -83,12 +91,11 @@ const revealObserver = new IntersectionObserver(
 
 revealSections.forEach((section) => revealObserver.observe(section));
 
-const navLinks = document.querySelectorAll(".nav__link[data-nav]");
-const navSections = [...navLinks]
-  .map((link) => {
-    const id = link.dataset.nav;
-    return document.getElementById(id);
-  })
+const navLinks = document.querySelectorAll("[data-nav]");
+const navSections = [...new Set(
+  [...navLinks].map((link) => link.dataset.nav).filter(Boolean)
+)]
+  .map((id) => document.getElementById(id))
   .filter(Boolean);
 
 function updateActiveNav() {
@@ -104,7 +111,9 @@ function updateActiveNav() {
   });
 
   navLinks.forEach((link) => {
-    link.classList.toggle("nav__link--active", current !== null && link.dataset.nav === current);
+    const active = current !== null && link.dataset.nav === current;
+    link.classList.toggle("nav__link--active", link.classList.contains("nav__link") && active);
+    link.classList.toggle("mobile-nav__link--active", link.classList.contains("mobile-nav__link") && active);
   });
 }
 

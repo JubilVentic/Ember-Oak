@@ -29,6 +29,20 @@
           <a class="nav__link" href="#visit" data-nav="visit">Visit</a>
         </div>
         <a class="nav__cta" href="#visit">Find us</a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="mobile-nav">
+          <span class="nav-toggle__bar"></span>
+          <span class="nav-toggle__bar"></span>
+          <span class="nav-toggle__bar"></span>
+          <span class="visually-hidden">Menu</span>
+        </button>
+      </nav>
+      <nav class="mobile-nav" id="mobile-nav" aria-label="Mobile" hidden>
+        <div class="mobile-nav__links">
+          <a class="mobile-nav__link" href="#about" data-nav="about">About</a>
+          <a class="mobile-nav__link" href="#menu" data-nav="menu">Menu</a>
+          <a class="mobile-nav__link" href="#visit" data-nav="visit">Visit</a>
+        </div>
+        <a class="mobile-nav__cta" href="#visit">Find us</a>
       </nav>
     </header>
 
@@ -522,20 +536,6 @@
         <a href="#visit">Visit</a>
       </nav>
     </footer>
-
-    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="mobile-nav">
-      <span class="nav-toggle__bar"></span>
-      <span class="nav-toggle__bar"></span>
-      <span class="nav-toggle__bar"></span>
-      <span class="visually-hidden">Menu</span>
-    </button>
-    <nav class="mobile-nav" id="mobile-nav" aria-label="Mobile" hidden>
-      <a href="#top">Home</a>
-      <a href="#about">About</a>
-      <a href="#menu">Menu</a>
-      <a href="#visit">Visit</a>
-      <a class="mobile-nav__cta" href="#visit">Find us</a>
-    </nav>
 
     <div class="lightbox" id="lightbox" hidden aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="lightbox-caption">
       <button class="lightbox__backdrop" type="button" aria-label="Close image preview"></button>
