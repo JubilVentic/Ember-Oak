@@ -56,6 +56,13 @@ if (heroVideo && heroSection) {
   reducedMotionQuery.addEventListener("change", syncHeroVideo);
 }
 
+document.querySelector(".mobile-nav__brand")?.addEventListener("click", (event) => {
+  event.preventDefault();
+  window.scrollTo({ top: 0, behavior: "smooth" });
+  closeMobileNav();
+  window.setTimeout(updateHeader, 400);
+});
+
 document.querySelector(".nav__logo")?.addEventListener("click", (event) => {
   event.preventDefault();
   window.scrollTo({ top: 0, behavior: "smooth" });
@@ -67,6 +74,8 @@ navToggle?.addEventListener("click", () => {
   const open = navToggle.getAttribute("aria-expanded") === "true";
   setMobileNavOpen(!open);
 });
+
+document.querySelector(".mobile-nav__close")?.addEventListener("click", closeMobileNav);
 
 mobileNav?.querySelectorAll("a").forEach((link) => {
   link.addEventListener("click", closeMobileNav);
