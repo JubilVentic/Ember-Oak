@@ -160,6 +160,11 @@ if (aboutCarousel && aboutTrack) {
     aboutTrack.appendChild(column.cloneNode(true));
   });
 
+  aboutTrack.querySelectorAll("img").forEach((img) => {
+    img.loading = "eager";
+    img.decoding = "async";
+  });
+
   const BASE_SPEED = 90;
   const SLOW_FACTOR = 0.5;
   const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
