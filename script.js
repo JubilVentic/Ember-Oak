@@ -88,19 +88,48 @@ document.addEventListener("keydown", (event) => {
 });
 
 const revealSections = document.querySelectorAll(".section-reveal");
+
+function revealSection(section) {
+  section.classList.add("is-visible");
+  revealObserver.unobserve(section);
+}
+
+function sectionInView(section) {
+  const rect = section.getBoundingClientRect();
+  const viewHeight = window.innerHeight || document.documentElement.clientHeight;
+  return rect.top < viewHeight * 0.92 && rect.bottom > 0;
+}
+
 const revealObserver = new IntersectionObserver(
   (entries) => {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
-        entry.target.classList.add("is-visible");
-        revealObserver.unobserve(entry.target);
+        revealSection(entry.target);
       }
     });
   },
-  { threshold: 0.12, rootMargin: "0px 0px -5% 0px" }
+  { threshold: 0, rootMargin: "0px 0px -8% 0px" }
 );
 
-revealSections.forEach((section) => revealObserver.observe(section));
+revealSections.forEach((section) => {
+  if (sectionInView(section)) {
+    section.classList.add("is-visible");
+  } else {
+    revealObserver.observe(section);
+  }
+});
+
+window.addEventListener(
+  "scroll",
+  () => {
+    revealSections.forEach((section) => {
+      if (!section.classList.contains("is-visible") && sectionInView(section)) {
+        revealSection(section);
+      }
+    });
+  },
+  { passive: true }
+);
 
 const navLinks = document.querySelectorAll("[data-nav]");
 const navSections = [...new Set(

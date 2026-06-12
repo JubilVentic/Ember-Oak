@@ -1293,6 +1293,11 @@ body.header-over-hero .mobile-nav__cta:hover {
     font-size: 0.88rem;
   }
 
+  .section-reveal {
+    opacity: 1;
+    transform: none;
+  }
+
   .about__inner {
     grid-template-columns: 1fr;
   }
