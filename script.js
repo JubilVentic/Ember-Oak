@@ -6,6 +6,7 @@ function setMobileNavOpen(open) {
   if (!navToggle || !mobileNav) return;
   navToggle.setAttribute("aria-expanded", String(open));
   mobileNav.hidden = !open;
+  mobileNav.classList.toggle("is-open", open);
   document.body.classList.toggle("mobile-nav-open", open);
 }
 
@@ -20,6 +21,7 @@ function updateHeader() {
   const overHero = window.scrollY < heroBottom - 80;
   header.classList.toggle("site-header--scrolled", window.scrollY > 24);
   header.classList.toggle("site-header--over-hero", overHero);
+  document.body.classList.toggle("header-over-hero", overHero && window.scrollY <= 24);
 }
 
 window.addEventListener("scroll", updateHeader);
