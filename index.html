@@ -12,18 +12,21 @@
     <link rel="icon" href="images/favicon-32x32.png" type="image/png" sizes="32x32" />
     <link rel="icon" href="images/favicon-16x16.png" type="image/png" sizes="16x16" />
     <link rel="apple-touch-icon" href="images/apple-touch-icon.png" />
+    <link rel="preload" href="images/hero-bg.webp" as="image" type="image/webp" />
+    <link rel="preload" href="fonts/GalanoGrotesque-Regular.woff2" as="font" type="font/woff2" crossorigin />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body id="top">
     <header class="site-header site-header--over-hero">
       <nav class="nav" aria-label="Main">
-        <a class="nav__logo" href="#top">
-          <img src="images/logo.png" alt="Ember &amp; Oak" width="44" height="44" />
+        <a class="nav__logo" href="#top" aria-label="Ember &amp; Oak home">
+          <img src="images/logo.png" alt="" width="40" height="40" />
+          <span class="nav__wordmark">Ember &amp; Oak</span>
         </a>
         <div class="nav__links">
-          <a class="nav__link" href="#about">About</a>
-          <a class="nav__link" href="#menu">Menu</a>
-          <a class="nav__link" href="#visit">Visit</a>
+          <a class="nav__link" href="#about" data-nav="about">About</a>
+          <a class="nav__link" href="#menu" data-nav="menu">Menu</a>
+          <a class="nav__link" href="#visit" data-nav="visit">Visit</a>
         </div>
         <a class="nav__cta" href="#visit">Find us</a>
       </nav>
@@ -31,7 +34,20 @@
 
     <main>
       <section class="hero" aria-labelledby="hero-heading">
-        <div class="hero__bg" aria-hidden="true"></div>
+        <div class="hero__media" aria-hidden="true">
+          <video
+            class="hero__video"
+            autoplay
+            muted
+            loop
+            playsinline
+            poster="images/hero-bg.jpg"
+          >
+            <source src="videos/hero.mp4" type="video/mp4" />
+            <source src="videos/hero.webm" type="video/webm" />
+          </video>
+          <div class="hero__bg"></div>
+        </div>
         <div class="hero__overlay" aria-hidden="true"></div>
         <div class="hero__inner">
           <div class="hero__brand">
@@ -48,7 +64,7 @@
         </div>
       </section>
 
-      <section class="about" id="about" aria-labelledby="about-heading">
+      <section class="about section-reveal" id="about" aria-labelledby="about-heading">
         <div class="about__inner">
           <div class="about__content">
             <h2 class="section-heading" id="about-heading">Our story</h2>
@@ -80,81 +96,81 @@
             <div class="about__carousel-track">
               <div class="about__column about__column--solo">
                 <figure class="about__tile about__tile--tall">
-                  <img src="images/menu/latte.jpg" alt="Oat milk latte" loading="lazy" />
+                  <img src="images/menu/latte.jpg" alt="Oat milk latte" loading="lazy" decoding="async" />
                   <figcaption>Oat milk latte</figcaption>
                 </figure>
               </div>
               <div class="about__column about__column--duo">
                 <figure class="about__tile about__tile--short">
-                  <img src="images/menu/croissant.jpg" alt="Almond croissant" loading="lazy" />
+                  <img src="images/menu/croissant.jpg" alt="Almond croissant" loading="lazy" decoding="async" />
                   <figcaption>Almond croissant</figcaption>
                 </figure>
                 <figure class="about__tile about__tile--short">
-                  <img src="images/menu/cookie.jpg" alt="Dark chocolate cookie" loading="lazy" />
+                  <img src="images/menu/cookie.jpg" alt="Dark chocolate cookie" loading="lazy" decoding="async" />
                   <figcaption>Chocolate cookie</figcaption>
                 </figure>
               </div>
               <div class="about__column about__column--solo">
                 <figure class="about__tile about__tile--tall">
-                  <img src="images/menu/espresso.jpg" alt="Double shot espresso" loading="lazy" />
+                  <img src="images/menu/espresso.jpg" alt="Double shot espresso" loading="lazy" decoding="async" />
                   <figcaption>Double shot</figcaption>
                 </figure>
               </div>
               <div class="about__column about__column--duo">
                 <figure class="about__tile about__tile--short">
-                  <img src="images/menu/cortado.jpg" alt="Cortado" loading="lazy" />
+                  <img src="images/menu/cortado.jpg" alt="Cortado" loading="lazy" decoding="async" />
                   <figcaption>Cortado</figcaption>
                 </figure>
                 <figure class="about__tile about__tile--short">
-                  <img src="images/menu/cardamom-bun.jpg" alt="Cardamom bun" loading="lazy" />
+                  <img src="images/menu/cardamom-bun.jpg" alt="Cardamom bun" loading="lazy" decoding="async" />
                   <figcaption>Cardamom bun</figcaption>
                 </figure>
               </div>
               <div class="about__column about__column--solo">
                 <figure class="about__tile about__tile--tall">
-                  <img src="images/menu/grain-bowl.jpg" alt="Grain bowl" loading="lazy" />
+                  <img src="images/menu/grain-bowl.jpg" alt="Grain bowl" loading="lazy" decoding="async" />
                   <figcaption>Grain bowl</figcaption>
                 </figure>
               </div>
               <div class="about__column about__column--duo">
                 <figure class="about__tile about__tile--short">
-                  <img src="images/menu/avocado-toast.jpg" alt="Avocado toast" loading="lazy" />
+                  <img src="images/menu/avocado-toast.jpg" alt="Avocado toast" loading="lazy" decoding="async" />
                   <figcaption>Avocado toast</figcaption>
                 </figure>
                 <figure class="about__tile about__tile--short">
-                  <img src="images/menu/sandwich.jpg" alt="Breakfast sandwich" loading="lazy" />
+                  <img src="images/menu/sandwich.jpg" alt="Breakfast sandwich" loading="lazy" decoding="async" />
                   <figcaption>Breakfast sandwich</figcaption>
                 </figure>
               </div>
               <div class="about__column about__column--solo">
                 <figure class="about__tile about__tile--tall">
-                  <img src="images/menu/pasta-alfredo.jpg" alt="Chicken alfredo" loading="lazy" />
+                  <img src="images/menu/pasta-alfredo.jpg" alt="Chicken alfredo" loading="lazy" decoding="async" />
                   <figcaption>Chicken alfredo</figcaption>
                 </figure>
               </div>
               <div class="about__column about__column--duo">
                 <figure class="about__tile about__tile--short">
-                  <img src="images/menu/pasta-aglio.jpg" alt="Aglio olio" loading="lazy" />
+                  <img src="images/menu/pasta-aglio.jpg" alt="Aglio olio" loading="lazy" decoding="async" />
                   <figcaption>Aglio olio</figcaption>
                 </figure>
                 <figure class="about__tile about__tile--short">
-                  <img src="images/menu/pasta-marinara.jpg" alt="Marinara" loading="lazy" />
+                  <img src="images/menu/pasta-marinara.jpg" alt="Marinara" loading="lazy" decoding="async" />
                   <figcaption>Marinara</figcaption>
                 </figure>
               </div>
               <div class="about__column about__column--solo">
                 <figure class="about__tile about__tile--tall">
-                  <img src="images/menu/pasta-carbonara.jpg" alt="Carbonara" loading="lazy" />
+                  <img src="images/menu/pasta-carbonara.jpg" alt="Carbonara" loading="lazy" decoding="async" />
                   <figcaption>Carbonara</figcaption>
                 </figure>
               </div>
               <div class="about__column about__column--duo">
                 <figure class="about__tile about__tile--short">
-                  <img src="images/menu/pasta-pesto.jpg" alt="Pesto linguine" loading="lazy" />
+                  <img src="images/menu/pasta-pesto.jpg" alt="Pesto linguine" loading="lazy" decoding="async" />
                   <figcaption>Pesto linguine</figcaption>
                 </figure>
                 <figure class="about__tile about__tile--short">
-                  <img src="images/menu/pasta-mushroom.jpg" alt="Bolognese" loading="lazy" />
+                  <img src="images/menu/pasta-mushroom.jpg" alt="Bolognese" loading="lazy" decoding="async" />
                   <figcaption>Bolognese</figcaption>
                 </figure>
               </div>
@@ -163,7 +179,7 @@
         </div>
       </section>
 
-      <section class="menu" id="menu" aria-labelledby="menu-heading">
+      <section class="menu section-reveal" id="menu" aria-labelledby="menu-heading">
         <div class="menu__header">
           <p class="menu__eyebrow">The goods</p>
           <h2 class="menu__title" id="menu-heading">Our offerings</h2>
@@ -178,8 +194,11 @@
         </div>
         <div class="menu__grid">
           <article class="menu-card" data-category="espresso">
-            <button type="button" class="menu-card__media" aria-label="View menu item image">
-              <img src="images/menu/espresso.jpg" alt="" loading="lazy" width="400" height="300" />
+            <button type="button" class="menu-card__media" aria-label="View Double shot espresso image">
+              <picture>
+                <source srcset="images/menu/espresso.webp" type="image/webp" />
+                <img src="images/menu/espresso.jpg" alt="Double shot espresso" loading="lazy" decoding="async" width="400" height="300" />
+              </picture>
             </button>
             <div class="menu-card__body">
               <div class="menu-card__row">
@@ -190,8 +209,11 @@
             </div>
           </article>
           <article class="menu-card" data-category="espresso">
-            <button type="button" class="menu-card__media" aria-label="View menu item image">
-              <img src="images/menu/latte.jpg" alt="" loading="lazy" width="400" height="300" />
+            <button type="button" class="menu-card__media" aria-label="View Oat milk latte image">
+              <picture>
+                <source srcset="images/menu/latte.webp" type="image/webp" />
+                <img src="images/menu/latte.jpg" alt="Oat milk latte" loading="lazy" decoding="async" width="400" height="300" />
+              </picture>
             </button>
             <div class="menu-card__body">
               <div class="menu-card__row">
@@ -202,8 +224,11 @@
             </div>
           </article>
           <article class="menu-card" data-category="espresso">
-            <button type="button" class="menu-card__media" aria-label="View menu item image">
-              <img src="images/menu/cortado.jpg" alt="" loading="lazy" width="400" height="300" />
+            <button type="button" class="menu-card__media" aria-label="View Cortado image">
+              <picture>
+                <source srcset="images/menu/cortado.webp" type="image/webp" />
+                <img src="images/menu/cortado.jpg" alt="Cortado" loading="lazy" decoding="async" width="400" height="300" />
+              </picture>
             </button>
             <div class="menu-card__body">
               <div class="menu-card__row">
@@ -214,8 +239,11 @@
             </div>
           </article>
           <article class="menu-card" data-category="pastries">
-            <button type="button" class="menu-card__media" aria-label="View menu item image">
-              <img src="images/menu/croissant.jpg" alt="" loading="lazy" width="400" height="300" />
+            <button type="button" class="menu-card__media" aria-label="View Almond croissant image">
+              <picture>
+                <source srcset="images/menu/croissant.webp" type="image/webp" />
+                <img src="images/menu/croissant.jpg" alt="Almond croissant" loading="lazy" decoding="async" width="400" height="300" />
+              </picture>
             </button>
             <div class="menu-card__body">
               <div class="menu-card__row">
@@ -226,8 +254,11 @@
             </div>
           </article>
           <article class="menu-card" data-category="pastries">
-            <button type="button" class="menu-card__media" aria-label="View menu item image">
-              <img src="images/menu/cookie.jpg" alt="" loading="lazy" width="400" height="300" />
+            <button type="button" class="menu-card__media" aria-label="View Dark chocolate cookie image">
+              <picture>
+                <source srcset="images/menu/cookie.webp" type="image/webp" />
+                <img src="images/menu/cookie.jpg" alt="Dark chocolate cookie" loading="lazy" decoding="async" width="400" height="300" />
+              </picture>
             </button>
             <div class="menu-card__body">
               <div class="menu-card__row">
@@ -238,8 +269,11 @@
             </div>
           </article>
           <article class="menu-card" data-category="pastries">
-            <button type="button" class="menu-card__media" aria-label="View menu item image">
-              <img src="images/menu/cardamom-bun.jpg" alt="" loading="lazy" width="400" height="300" />
+            <button type="button" class="menu-card__media" aria-label="View Cardamom bun image">
+              <picture>
+                <source srcset="images/menu/cardamom-bun.webp" type="image/webp" />
+                <img src="images/menu/cardamom-bun.jpg" alt="Cardamom bun" loading="lazy" decoding="async" width="400" height="300" />
+              </picture>
             </button>
             <div class="menu-card__body">
               <div class="menu-card__row">
@@ -250,8 +284,11 @@
             </div>
           </article>
           <article class="menu-card" data-category="food">
-            <button type="button" class="menu-card__media" aria-label="View menu item image">
-              <img src="images/menu/avocado-toast.jpg" alt="" loading="lazy" width="400" height="300" />
+            <button type="button" class="menu-card__media" aria-label="View Avocado toast image">
+              <picture>
+                <source srcset="images/menu/avocado-toast.webp" type="image/webp" />
+                <img src="images/menu/avocado-toast.jpg" alt="Avocado toast" loading="lazy" decoding="async" width="400" height="300" />
+              </picture>
             </button>
             <div class="menu-card__body">
               <div class="menu-card__row">
@@ -262,8 +299,11 @@
             </div>
           </article>
           <article class="menu-card" data-category="food">
-            <button type="button" class="menu-card__media" aria-label="View menu item image">
-              <img src="images/menu/sandwich.jpg" alt="" loading="lazy" width="400" height="300" />
+            <button type="button" class="menu-card__media" aria-label="View Breakfast sandwich image">
+              <picture>
+                <source srcset="images/menu/sandwich.webp" type="image/webp" />
+                <img src="images/menu/sandwich.jpg" alt="Breakfast sandwich" loading="lazy" decoding="async" width="400" height="300" />
+              </picture>
             </button>
             <div class="menu-card__body">
               <div class="menu-card__row">
@@ -274,8 +314,11 @@
             </div>
           </article>
           <article class="menu-card" data-category="food">
-            <button type="button" class="menu-card__media" aria-label="View menu item image">
-              <img src="images/menu/grain-bowl.jpg" alt="" loading="lazy" width="400" height="300" />
+            <button type="button" class="menu-card__media" aria-label="View Grain bowl image">
+              <picture>
+                <source srcset="images/menu/grain-bowl.webp" type="image/webp" />
+                <img src="images/menu/grain-bowl.jpg" alt="Grain bowl" loading="lazy" decoding="async" width="400" height="300" />
+              </picture>
             </button>
             <div class="menu-card__body">
               <div class="menu-card__row">
@@ -286,8 +329,11 @@
             </div>
           </article>
           <article class="menu-card" data-category="pasta">
-            <button type="button" class="menu-card__media" aria-label="View menu item image">
-              <img src="images/menu/pasta-alfredo.jpg" alt="" loading="lazy" width="400" height="300" />
+            <button type="button" class="menu-card__media" aria-label="View Chicken alfredo image">
+              <picture>
+                <source srcset="images/menu/alfredo.webp" type="image/webp" />
+                <img src="images/menu/pasta-alfredo.jpg" alt="Chicken alfredo" loading="lazy" decoding="async" width="400" height="300" />
+              </picture>
             </button>
             <div class="menu-card__body">
               <div class="menu-card__row">
@@ -298,8 +344,11 @@
             </div>
           </article>
           <article class="menu-card" data-category="pasta">
-            <button type="button" class="menu-card__media" aria-label="View menu item image">
-              <img src="images/menu/pasta-aglio.jpg" alt="" loading="lazy" width="400" height="300" />
+            <button type="button" class="menu-card__media" aria-label="View Aglio olio image">
+              <picture>
+                <source srcset="images/menu/Shrimp-Aglio-Olio.webp" type="image/webp" />
+                <img src="images/menu/pasta-aglio.jpg" alt="Aglio olio" loading="lazy" decoding="async" width="400" height="300" />
+              </picture>
             </button>
             <div class="menu-card__body">
               <div class="menu-card__row">
@@ -310,8 +359,11 @@
             </div>
           </article>
           <article class="menu-card" data-category="pasta">
-            <button type="button" class="menu-card__media" aria-label="View menu item image">
-              <img src="images/menu/pasta-marinara.jpg" alt="" loading="lazy" width="400" height="300" />
+            <button type="button" class="menu-card__media" aria-label="View Marinara image">
+              <picture>
+                <source srcset="images/menu/pasta-marinara.webp" type="image/webp" />
+                <img src="images/menu/pasta-marinara.jpg" alt="Marinara" loading="lazy" decoding="async" width="400" height="300" />
+              </picture>
             </button>
             <div class="menu-card__body">
               <div class="menu-card__row">
@@ -322,8 +374,11 @@
             </div>
           </article>
           <article class="menu-card" data-category="pasta">
-            <button type="button" class="menu-card__media" aria-label="View menu item image">
-              <img src="images/menu/pasta-carbonara.jpg" alt="" loading="lazy" width="400" height="300" />
+            <button type="button" class="menu-card__media" aria-label="View Carbonara image">
+              <picture>
+                <source srcset="images/menu/Carbonara.webp" type="image/webp" />
+                <img src="images/menu/pasta-carbonara.jpg" alt="Carbonara" loading="lazy" decoding="async" width="400" height="300" />
+              </picture>
             </button>
             <div class="menu-card__body">
               <div class="menu-card__row">
@@ -334,8 +389,11 @@
             </div>
           </article>
           <article class="menu-card" data-category="pasta">
-            <button type="button" class="menu-card__media" aria-label="View menu item image">
-              <img src="images/menu/pasta-pesto.jpg" alt="" loading="lazy" width="400" height="300" />
+            <button type="button" class="menu-card__media" aria-label="View Pesto linguine image">
+              <picture>
+                <source srcset="images/menu/pasta-pesto.webp" type="image/webp" />
+                <img src="images/menu/pasta-pesto.jpg" alt="Pesto linguine" loading="lazy" decoding="async" width="400" height="300" />
+              </picture>
             </button>
             <div class="menu-card__body">
               <div class="menu-card__row">
@@ -346,8 +404,11 @@
             </div>
           </article>
           <article class="menu-card" data-category="pasta">
-            <button type="button" class="menu-card__media" aria-label="View menu item image">
-              <img src="images/menu/pasta-mushroom.jpg" alt="" loading="lazy" width="400" height="300" />
+            <button type="button" class="menu-card__media" aria-label="View Bolognese image">
+              <picture>
+                <source srcset="images/menu/pasta-mushroom.webp" type="image/webp" />
+                <img src="images/menu/pasta-mushroom.jpg" alt="Bolognese" loading="lazy" decoding="async" width="400" height="300" />
+              </picture>
             </button>
             <div class="menu-card__body">
               <div class="menu-card__row">
@@ -360,7 +421,7 @@
         </div>
       </section>
 
-      <section class="visit" id="visit" aria-labelledby="visit-heading">
+      <section class="visit section-reveal" id="visit" aria-labelledby="visit-heading">
         <div class="visit__inner">
           <div class="visit__panel">
             <p class="visit__eyebrow">Visit</p>
@@ -435,13 +496,17 @@
             </div>
           </div>
           <div class="visit__visual">
-            <img
-              src="images/visit-exterior.jpg"
-              alt="Outdoor seating at Ember &amp; Oak"
-              loading="lazy"
-              width="1200"
-              height="900"
-            />
+            <picture>
+              <source srcset="images/visit-exterior.webp" type="image/webp" />
+              <img
+                src="images/visit-exterior.jpg"
+                alt="Outdoor seating at Ember &amp; Oak"
+                loading="lazy"
+                decoding="async"
+                width="1200"
+                height="900"
+              />
+            </picture>
           </div>
         </div>
       </section>
@@ -465,9 +530,11 @@
       <span class="visually-hidden">Menu</span>
     </button>
     <nav class="mobile-nav" id="mobile-nav" aria-label="Mobile" hidden>
+      <a href="#top">Home</a>
       <a href="#about">About</a>
       <a href="#menu">Menu</a>
       <a href="#visit">Visit</a>
+      <a class="mobile-nav__cta" href="#visit">Find us</a>
     </nav>
 
     <div class="lightbox" id="lightbox" hidden aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="lightbox-caption">
@@ -479,6 +546,6 @@
       </div>
     </div>
 
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
   </body>
 </html>

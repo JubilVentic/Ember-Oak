@@ -21,6 +21,36 @@ window.addEventListener("scroll", updateHeader);
 window.addEventListener("resize", updateHeader);
 updateHeader();
 
+const heroVideo = document.querySelector(".hero__video");
+const heroSection = document.querySelector(".hero");
+
+if (heroVideo && heroSection) {
+  const reducedMotionQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
+
+  const syncHeroVideo = () => {
+    if (reducedMotionQuery.matches) {
+      heroVideo.pause();
+      heroVideo.removeAttribute("autoplay");
+      heroSection.classList.remove("hero--video-ready");
+      return;
+    }
+
+    heroVideo.setAttribute("autoplay", "");
+    heroVideo.play().catch(() => {});
+  };
+
+  heroVideo.addEventListener("playing", () => {
+    heroSection.classList.add("hero--video-ready");
+  });
+
+  heroVideo.addEventListener("error", () => {
+    heroSection.classList.remove("hero--video-ready");
+  });
+
+  syncHeroVideo();
+  reducedMotionQuery.addEventListener("change", syncHeroVideo);
+}
+
 document.querySelector(".nav__logo")?.addEventListener("click", (event) => {
   event.preventDefault();
   window.scrollTo({ top: 0, behavior: "smooth" });
@@ -37,6 +67,49 @@ navToggle?.addEventListener("click", () => {
 mobileNav?.querySelectorAll("a").forEach((link) => {
   link.addEventListener("click", closeMobileNav);
 });
+
+const revealSections = document.querySelectorAll(".section-reveal");
+const revealObserver = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("is-visible");
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  },
+  { threshold: 0.12, rootMargin: "0px 0px -5% 0px" }
+);
+
+revealSections.forEach((section) => revealObserver.observe(section));
+
+const navLinks = document.querySelectorAll(".nav__link[data-nav]");
+const navSections = [...navLinks]
+  .map((link) => {
+    const id = link.dataset.nav;
+    return document.getElementById(id);
+  })
+  .filter(Boolean);
+
+function updateActiveNav() {
+  if (!navLinks.length || !navSections.length) return;
+
+  const offset = 120;
+  let current = null;
+
+  navSections.forEach((section) => {
+    if (window.scrollY >= section.offsetTop - offset) {
+      current = section.id;
+    }
+  });
+
+  navLinks.forEach((link) => {
+    link.classList.toggle("nav__link--active", current !== null && link.dataset.nav === current);
+  });
+}
+
+window.addEventListener("scroll", updateActiveNav, { passive: true });
+updateActiveNav();
 
 const menuFilters = document.querySelectorAll(".menu__filter");
 const menuCards = document.querySelectorAll(".menu-card");
