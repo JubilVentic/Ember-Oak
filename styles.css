@@ -439,6 +439,23 @@ img {
   height: 100%;
   object-fit: cover;
   object-position: center;
+  pointer-events: none;
+}
+
+.hero__video--hidden {
+  visibility: hidden;
+  opacity: 0;
+}
+
+.hero__video::-webkit-media-controls,
+.hero__video::-webkit-media-controls-enclosure,
+.hero__video::-webkit-media-controls-panel,
+.hero__video::-webkit-media-controls-play-button,
+.hero__video::-webkit-media-controls-start-playback-button,
+.hero__video::-webkit-media-controls-overlay-play-button {
+  display: none !important;
+  -webkit-appearance: none;
+  appearance: none;
 }
 
 .hero__bg {
