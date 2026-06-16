@@ -34,6 +34,10 @@ const heroSection = document.querySelector(".hero");
 if (heroVideo && heroSection) {
   const reducedMotionQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
 
+  const markHeroVideoReady = () => {
+    heroSection.classList.add("hero--video-ready");
+  };
+
   const syncHeroVideo = () => {
     if (reducedMotionQuery.matches) {
       heroVideo.pause();
@@ -43,19 +47,24 @@ if (heroVideo && heroSection) {
     }
 
     heroVideo.setAttribute("autoplay", "");
-    heroVideo.play().catch(() => {});
+    heroVideo.play().then(markHeroVideoReady).catch(() => {});
   };
 
-  heroVideo.addEventListener("playing", () => {
-    heroSection.classList.add("hero--video-ready");
-  });
-
+  heroVideo.addEventListener("playing", markHeroVideoReady);
+  heroVideo.addEventListener("canplay", markHeroVideoReady);
   heroVideo.addEventListener("error", () => {
     heroSection.classList.remove("hero--video-ready");
   });
 
+  if (!heroVideo.paused && heroVideo.readyState >= 2) {
+    markHeroVideoReady();
+  }
+
   syncHeroVideo();
   reducedMotionQuery.addEventListener("change", syncHeroVideo);
+  document.addEventListener("visibilitychange", () => {
+    if (!document.hidden) syncHeroVideo();
+  });
 }
 
 document.querySelector(".mobile-nav__brand")?.addEventListener("click", (event) => {
