@@ -440,6 +440,7 @@ img {
   object-fit: cover;
   object-position: center;
   pointer-events: none;
+  transition: opacity 0.5s ease;
 }
 
 .hero__video--hidden {

@@ -33,53 +33,52 @@ const heroSection = document.querySelector(".hero");
 
 if (heroVideo && heroSection) {
   const reducedMotionQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
+  let videoRevealed = false;
 
-  const showHeroVideoFallback = () => {
-    heroVideo.classList.add("hero__video--hidden");
-    heroSection.classList.remove("hero--video-ready");
-  };
-
-  const markHeroVideoReady = () => {
-    if (heroVideo.paused || heroVideo.readyState < 2) return;
+  const revealVideo = () => {
+    if (videoRevealed) return;
+    videoRevealed = true;
     heroVideo.classList.remove("hero__video--hidden");
     heroSection.classList.add("hero--video-ready");
   };
 
-  const prepareHeroVideo = () => {
+  const hideVideo = () => {
+    videoRevealed = false;
+    heroVideo.classList.add("hero__video--hidden");
+    heroSection.classList.remove("hero--video-ready");
+  };
+
+  const tryPlay = () => {
     heroVideo.defaultMuted = true;
     heroVideo.muted = true;
     heroVideo.playsInline = true;
     heroVideo.setAttribute("muted", "");
     heroVideo.setAttribute("playsinline", "");
-  };
-
-  const syncHeroVideo = () => {
-    prepareHeroVideo();
 
     if (reducedMotionQuery.matches) {
       heroVideo.pause();
-      heroVideo.removeAttribute("autoplay");
-      showHeroVideoFallback();
+      hideVideo();
       return;
     }
 
-    heroVideo.setAttribute("autoplay", "");
-    heroVideo.play().then(markHeroVideoReady).catch(showHeroVideoFallback);
+    heroVideo.play().then(revealVideo).catch(hideVideo);
   };
 
-  heroVideo.addEventListener("playing", markHeroVideoReady);
-  heroVideo.addEventListener("error", showHeroVideoFallback);
+  // timeupdate is the most reliable signal — fires once actual frames are rendering
+  heroVideo.addEventListener("timeupdate", revealVideo, { once: true });
+  heroVideo.addEventListener("playing", revealVideo);
+  heroVideo.addEventListener("error", hideVideo);
 
-  if (!heroVideo.paused && heroVideo.readyState >= 2) {
-    markHeroVideoReady();
+  // Video may already be playing if browser started it before defer ran
+  if (heroVideo.currentTime > 0 || (!heroVideo.paused && !heroVideo.ended)) {
+    revealVideo();
   } else {
-    showHeroVideoFallback();
+    tryPlay();
   }
 
-  syncHeroVideo();
-  reducedMotionQuery.addEventListener("change", syncHeroVideo);
+  reducedMotionQuery.addEventListener("change", tryPlay);
   document.addEventListener("visibilitychange", () => {
-    if (!document.hidden) syncHeroVideo();
+    if (!document.hidden && !videoRevealed) tryPlay();
   });
 }
 
